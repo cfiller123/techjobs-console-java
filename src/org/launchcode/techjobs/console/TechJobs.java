@@ -110,7 +110,9 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-
+        HashMap<String, String> key = someJobs.get(0);
+        String keyOne = key.get
+        if (someJobs)
         System.out.println("printJobs is not implemented yet");
         // if ()
     }
