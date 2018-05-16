@@ -7,9 +7,11 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by LaunchCode
@@ -82,6 +84,25 @@ public class JobData {
         }
 
         return jobs;
+    }
+
+    public static String findByValue(String jobValue) {
+        loadData();
+
+        for (int i = 0; i < allJobs.size(); i++) {
+
+            HashMap<String, String> jobs = new HashMap<>(allJobs.get(i));
+
+            System.out.println("*****");
+
+            for (Map.Entry<String, String> entry : jobs.entrySet()) {
+
+                if (entry.getKey().equals(jobValue)) {
+                    System.out.println(entry.getKey() + ": " + entry.getValue());
+                    //continue;
+                }
+            }
+        }
     }
 
     /**
