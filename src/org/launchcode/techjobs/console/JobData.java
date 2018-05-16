@@ -89,16 +89,13 @@ public class JobData {
     public static String findByValue(String jobValue) {
         loadData();
 
-        for (int i = 0; i < allJobs.size(); i++) {
-
-            HashMap<String, String> jobs = new HashMap<>(allJobs.get(i));
-
-            System.out.println("*****");
-
-            for (Map.Entry<String, String> entry : jobs.entrySet()) {
-
-                if (entry.getKey().equals(jobValue)) {
-                    System.out.println(entry.getKey() + ": " + entry.getValue());
+        for (HashMap<String, String> job : allJobs) {
+            for (Map.Entry<String, String> entry : job.entrySet()) {
+                if (entry.getValue().equals(jobValue)) {
+                    System.out.println("*****");
+                    for (Map.Entry<String, String> entry2 : job.entrySet()) {
+                        System.out.println(entry2.getKey() + ": " + entry2.getValue());
+                    }
                     //continue;
                 }
             }
