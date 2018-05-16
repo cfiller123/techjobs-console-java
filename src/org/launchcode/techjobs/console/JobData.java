@@ -78,6 +78,7 @@ public class JobData {
 
             String aValue = row.get(column);
 
+            //need to find out how to do case oblivious search
             if (aValue.contains(value)) {
                 jobs.add(row);
             }
@@ -86,12 +87,12 @@ public class JobData {
         return jobs;
     }
 
-    public static String findByValue(String jobValue) {
+    public static void findByValue(String jobValue) {
         loadData();
 
         for (HashMap<String, String> job : allJobs) {
             for (Map.Entry<String, String> entry : job.entrySet()) {
-                if (entry.getValue().equals(jobValue)) {
+                if (entry.getValue().equalsIgnoreCase(jobValue)) {
                     System.out.println("*****");
                     for (Map.Entry<String, String> entry2 : job.entrySet()) {
                         System.out.println(entry2.getKey() + ": " + entry2.getValue());
