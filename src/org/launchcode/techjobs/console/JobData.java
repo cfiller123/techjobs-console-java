@@ -93,12 +93,12 @@ public class JobData {
         for (HashMap<String, String> job : allJobs) {
             for (Map.Entry<String, String> entry : job.entrySet()) {
                 if (entry.getValue().contains(jobValue)) {
-                //if (entry.getValue().equalsIgnoreCase(jobValue)) {
                     System.out.println("*****");
                     for (Map.Entry<String, String> entry2 : job.entrySet()) {
                         System.out.println(entry2.getKey() + ": " + entry2.getValue());
                     }
-                    //continue;
+                    break;
+
                 }
             }
         }
